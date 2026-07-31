@@ -43,7 +43,8 @@ const competitionCount: number = 4
 const competitionCountResult = competitionCount > 3 ? "Pass" : "Fail";
 const hasDisciplinaryRecord: boolean = !false;
 const isDocumentsComplete: boolean = true;
-const isQualifies: boolean = gpaResult && familyIncomeResult && competitionCountResult && hasDisciplinaryRecord && isDocumentsComplete;
+const isQualifies: boolean = (gpaResult && familyIncomeResult && competitionCountResult && isDocumentsComplete) && hasDisciplinaryRecord
+const isSchoolAmount = isQualifies ? 12000000 : 0
 
 console.log("==== Scholarship Data ====")
 console.log("Student Name: " + studentName)
@@ -56,3 +57,4 @@ console.log("Competition Count Result: " +  competitionCountResult)
 console.log("Has No Discipline Record: " + hasDisciplinaryRecord)
 console.log("Is Documents Complete: " + isDocumentsComplete)
 console.log("Was qualified: " + isQualifies)
+console.log("School Amount: " + isSchoolAmount)

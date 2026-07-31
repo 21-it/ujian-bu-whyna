@@ -15,12 +15,12 @@
 
  */
 
-const atleastFinalScore: number = 72
+const atleastFinalScore: number = 75
 const finalScore: number = 82
 const atleastAttendance: number = 90
 const attendance: number = 94
-const tuitionPaid: boolean = true;
-const isEligible: boolean = finalScore > atleastFinalScore && attendance > atleastAttendance && tuitionPaid;
+const tuitionPaid: boolean = true
+const isEligible: boolean = finalScore > atleastFinalScore && attendance > atleastAttendance && tuitionPaid
 
 console.log("==== Eligible Student ====")
 console.log("Minimum Final Score: " + atleastFinalScore)
@@ -30,3 +30,4 @@ console.log("Attendance: " + attendance)
 console.log("finalScore > atleastFinalScore: ", finalScore > atleastFinalScore)
 console.log("attendance > atleastAttendance: ", attendance > atleastAttendance)
 console.log("tuitionPaid && isEligible:", tuitionPaid && isEligible)
+console.log("Is Egilible: " + isEligible)

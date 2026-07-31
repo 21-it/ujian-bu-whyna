@@ -25,7 +25,7 @@ const overtimeRate: number = 50000
 const bonus: number = 300000
 const employeeOvertimeHours: number = 12
 const overtimePay: number = employeeOvertimeHours * bonus
-const finalSalary: number = basicSalary + overtimePay
+const finalSalary: number = basicSalary + overtimePay + bonus
 
 console.log("==== Employee Data ====")
 console.log("Employee Name: " + employeeName)

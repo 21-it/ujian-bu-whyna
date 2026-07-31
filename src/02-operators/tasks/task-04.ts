@@ -53,8 +53,10 @@ const totalProductOne: number = products[0].price * products[0].quantity
 const totalProductTwo: number = products[1].price * products[1].quantity
 const totalProductThree: number = products[2].price * products[2].quantity
 const grandPayment: number = totalProductOne + totalProductTwo + totalProductThree
+const isDiscountApproved = grandPayment > 1000000 ? true : false
 const discountAmount: number = grandPayment * discount
 const finalPayment: number = grandPayment - discountAmount
+
 
 console.log("==== Online Store Data ====")
 console.log("Total Product No.1: " + totalProductOne)
@@ -62,5 +64,6 @@ console.log("Total Product No.2: " + totalProductTwo)
 console.log("Total Product No.3: " + totalProductThree)
 console.log("Did the customer's premium member? : " + ispremiumMember)
 console.log("Grand Payment: " + grandPayment)
+console.log("Is Discount Approved: " +isDiscountApproved)
 console.log("Discount Amount: " + discountAmount)
 console.log("Final Payment: " + finalPayment)
