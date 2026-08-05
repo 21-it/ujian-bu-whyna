@@ -34,11 +34,12 @@ const menus: Menu[] = [
     }
 ]
 
-const discount: number = 10000
+const memberDiscount: boolean = true
+const discount: number = memberDiscount ? 10000 : 0
 const totalFood: number = menus[0].price * menus[0].amountQuantity
 const totalDrink: number = menus[1].price * menus[1].amountQuantity
 const grandTotal: number = totalFood + totalDrink
-const finalPayment: number = ((totalFood - discount) + (totalDrink - discount))
+const finalPayment: number = grandTotal - discount
 
 console.log('==== Cafetaria Menu ====')
 console.log("Total Food: " + totalFood)

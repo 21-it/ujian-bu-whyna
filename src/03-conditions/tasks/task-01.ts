@@ -30,6 +30,10 @@ const tuitionPaid: boolean = true;
 const isEligible: boolean = finalScore > minimumFinalScore && attendance > minimumAttendance && tuitionPaid
 
 console.log("\n==== Student Data ====\n")
+console.log("Student Name: " + studentName)
+console.log("Final Score: " + finalScore)
+console.log("Attendance: " + attendance)
+console.log("Tuition Paid: " + tuitionPaid)
 
 if (finalScore > minimumFinalScore) {
     console.log("Result (Score): Congrats, you passed");

@@ -46,26 +46,26 @@ Student Tasks
 - Display the final registration result.
  */
 
-const studentname: string = "Nadia Putri"
-const isActiveStudent: boolean = true
-const tuitionPaid: boolean = true
-const isPassedProgrammingFunndamental: boolean = true
-const isPassedDatabaseSystem: boolean = true
-const gpa: number = 3.45
-const isSeatAvailable: boolean = false
+const studentname: string = "Nadia Putri";
+const isActiveStudent: boolean = true;
+const tuitionPaid: boolean = true;
+const isPassedProgrammingFunndamental: boolean = true;
+const isPassedDatabaseSystem: boolean = true;
+const gpa: number = 3.45;
+const isSeatAvailable: boolean = false;
 
-console.log("==== Student Information ====\n")
+console.log("==== Student Information ====\n");
 
 if (!isActiveStudent && !tuitionPaid) {
-    console.log("Registration Rejected.")
-}   else {
-      if (isPassedDatabaseSystem && isPassedProgrammingFunndamental && gpa) {
-            if (isSeatAvailable) {
-                  console.log("Registration Success")
-            }     else {
-                  console.log("Added to waiting list")
-            }
-          }    else {
-                  console.log("Uknown Error.")
-      }
+  console.log("Registration Rejected.");
+} else {
+  if (isPassedDatabaseSystem && isPassedProgrammingFunndamental && gpa) {
+    if (isSeatAvailable) {
+      console.log("Registration Success");
+    } else {
+      console.log("Added to waiting list");
+    }
+  } else {
+    console.log("Uknown Error.");
+  }
 }

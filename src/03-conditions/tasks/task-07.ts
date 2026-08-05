@@ -63,8 +63,8 @@ console.log("\n==== Second Screening ====")
 const secondScreening: boolean = isExistingDebt == true && permanentEmployee == true
 
 if (secondScreening == true) {
-    const secondScreeningResult = secondScreening ? true : false
-    console.log("You passed the second screening. You're approved")
+    const secondScreeningResult = secondScreening ? "Congrats, you're approved" : "failed"
+    console.log(`${secondScreeningResult}`)
 }   else {
     console.log("You failed the second screening. Let's move to the Manual Interview")
 }

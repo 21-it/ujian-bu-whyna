@@ -1,6 +1,6 @@
 /**
  * The homeroom teacher receives attendance data for one class at following array.
- * 
+ *
  * Using a loop:
  * - Count present students.
  * - Count absent students.
@@ -16,5 +16,28 @@ const attendances = [
   { name: "Eka", present: false },
   { name: "Fajar", present: true },
   { name: "Gita", present: true },
-  { name: "Hana", present: false }
+  { name: "Hana", present: false },
 ];
+
+let presentStudents = 0;
+let absentStudents = 0;
+
+console.log("=== Absent Students ===");
+
+for (let i = 0; i < attendances.length; i++) {
+  const student = attendances[i];
+
+  if (student.present) {
+    presentStudents++;
+  } else {
+    absentStudents++;
+    console.log(`- ${student.name}`);
+  }
+}
+
+const attendancePercentage = (presentStudents / attendances.length) * 100;
+
+console.log("\n=== Attendance Summary ===");
+console.log(`Present Students: ${presentStudents}`);
+console.log(`Absent Students: ${absentStudents}`);
+console.log(`Attendance Percentage: ${attendancePercentage}%`);

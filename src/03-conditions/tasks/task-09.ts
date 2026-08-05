@@ -40,7 +40,7 @@ Student Tasks
 const poweredOn: boolean = true
 const temperature: number = 95
 const highVibration: boolean = false
-const productionSpeed: number = 60
+const productionSpeed: number = 92
 
 console.log("==== Machine Status ====\n")
 

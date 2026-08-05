@@ -27,7 +27,7 @@ console.log("Monthly Usage: " + monthlyUsage)
 
 if (monthlyUsage < 50) {
     console.log("Your package is Basic Package")
-}   else if (monthlyUsage > 50 || monthlyUsage < 150) {
+}   else if (monthlyUsage > 50 && monthlyUsage < 150) {
     console.log("Your package is Standard Package")
 }   else {
     console.log("Your package is Premium Package")

@@ -24,13 +24,14 @@
  */
 
 const customerName: string = "Nadia Putri"
-const isPremiumMember: boolean = true;
+const isPremiumMember: boolean = false;
 const isRoomAvailable: boolean = false;
 
 console.log("\n==== Hotel Reservation ====\n")
 console.log("Customer Name: " + customerName)
+console.log("Is Premium: " + isPremiumMember)
 
-if (isPremiumMember == true && isRoomAvailable == !true) {
+if (isPremiumMember == !true !== isRoomAvailable == !true) {
     const isPremiumMemberResult = isPremiumMember ? true : false;
     console.log(`Got prioritized: ${isPremiumMemberResult}`)
 }   else {
