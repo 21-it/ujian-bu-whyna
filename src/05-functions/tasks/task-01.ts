@@ -24,3 +24,19 @@
  * 5. Display every student's final grade.
 
  */
+
+const alya = calculationFinalGrade(85, 80, 92); //yang ini greet biasa
+const budi = calculationFinalGrade(78, 75, 81);
+const citra = calculationFinalGrade(90, 88, 95);
+
+function calculationFinalGrade(
+  assignMent: number,
+  midTerm: number,
+  finalTerm: number,
+): number {
+  return assignMent * 0.3 + midTerm * 0.3 + finalTerm * 0.4;
+}
+
+console.log(`Alya : ${alya}`);
+console.log(`Budi : ${budi}`);
+console.log(`Citra : ${citra}`);

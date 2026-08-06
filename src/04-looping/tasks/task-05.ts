@@ -35,18 +35,13 @@ for (let i = 0; i < scores.length; i++) {
 
   if (scores[i] >= 95) {
     goldMedal++;
-  }
-
-  if (scores[i] > 84 && scores[i] < 95) {
-    silverMedal++;
-  }
-
-  if (scores[i] > 74 && scores[i] < 85) {
-    bronzeMedal++;
-  }
-
-  if (scores[i] < 75) {
-    withoutMedal++;
+  }  else if (scores[i] > 84 && scores[i] < 95) {
+    silverMedal++
+  }  else if (scores[i] > 74 && scores[i] < 85) {
+    bronzeMedal++
+  }  else {
+    scores[i] < 75;
+    withoutMedal++
   }
 }
 

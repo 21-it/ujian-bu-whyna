@@ -11,10 +11,15 @@
  * 5. Display the returned value.
  */
 
-const prices = [
-    250000,
-    180000,
-    95000,
-    420000,
-    125000
-];
+const prices = [250000, 180000, 95000, 420000, 125000];
+
+function calculateTotalPrice(prices: number[]): number {
+  let totalPrice = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    totalPrice += prices[i];
+  }
+  return totalPrice;
+}
+
+console.log(calculateTotalPrice(prices));

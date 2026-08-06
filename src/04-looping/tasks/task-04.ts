@@ -32,27 +32,28 @@ let totalSales = 0;
 let highestTransaction = sales[0];
 let lowestTransaction = sales[0];
 let transactionCount = 0;
+let highestNumber = 0;
+let lowestNumber = 0;
 
 for (let i = 0; i < sales.length; i++) {
   totalSales += sales[i];
 
   if (sales[i] > highestTransaction) {
     highestTransaction = sales[i];
-  }
-
-  if (sales[i] < lowestTransaction) {
+    highestNumber = i;
+  }  else if (sales[i] < lowestTransaction) {
     lowestTransaction = sales[i];
-  }
-
-  if (sales[i] >= 300000) {
-    transactionCount++;
+    lowestNumber = i;
+  }  else {
+    sales[i] >= 300000;
+    transactionCount++
   }
 }
 
 let AverageRevenue = totalSales / sales.length;
 
 console.log(`Total Revenue: ${totalSales}`);
-console.log(`Highest Transaction: ${highestTransaction}`);
-console.log(`Lowest Transaction: ${lowestTransaction}`);
+console.log(`Highest Transaction: Transaksi ke - ${highestNumber} = ${highestTransaction}`);
+console.log(`Lowest Transaction: Transaksi ke - ${lowestNumber} = ${lowestTransaction}`);
 console.log(`Number of Transaction: ${transactionCount}`);
 console.log(`Average Revenue: ${AverageRevenue}`);
