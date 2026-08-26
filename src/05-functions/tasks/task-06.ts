@@ -7,7 +7,7 @@
  * - Lowest transaction
  * - Average transaction
  * - Number of transactions above Rp500,000
- * 
+ *
  * Student Tasks
  * Create the following functions:
  */

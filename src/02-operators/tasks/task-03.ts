@@ -8,7 +8,7 @@
  * | Overtime Hours | 12      |
  * | Overtime Rate  | 50000   |
  *
- * 
+ *
  * The company has the following policy:
  * Employees who work more than 10 overtime hours receive an additional Rp300,000 performance bonus.
  * Otherwise, no bonus is given.

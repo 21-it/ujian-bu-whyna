@@ -8,7 +8,7 @@
  * | Electricity Price per kWh | 1650  |
  * | Solar Panel Installed     | Yes   |
  * | Energy Saving Mode        | No    |
- * 
+ *
  * Business Rules
  * - Electricity usage is calculated from the meter difference.
  * - Houses with solar panels receive a 20% discount.
@@ -17,7 +17,7 @@
  *      - Solar panel is installed
  *      - Energy consumption is below 300 kWh
  *      - Energy Saving Mode is enabled
- * 
+ *
  * The system must calculate:
  * - Total energy consumption
  * - Electricity bill

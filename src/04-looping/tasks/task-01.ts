@@ -8,8 +8,8 @@
  * Checking attendance for Student #30
  * Attendance verification completed.
  * -------------------------------------
- * 
- * Tasks: 
+ *
+ * Tasks:
  * 1. Create a program using a for loop.
  * 2. Display the attendance message for every student.
  * 3. After the loop finishes, display: "Attendance verification completed"

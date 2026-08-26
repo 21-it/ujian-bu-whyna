@@ -1,6 +1,6 @@
 /**
- * An online shopping platform allows customers to purchase multiple products in one transaction. 
- * Every product added to the shopping cart stores the product code, product name, unit price, 
+ * An online shopping platform allows customers to purchase multiple products in one transaction.
+ * Every product added to the shopping cart stores the product code, product name, unit price,
  * quantity purchased, and whether the product is eligible for free shipping.
  * Today, one customer added the following products to the cart.
 

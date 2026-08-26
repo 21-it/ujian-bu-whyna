@@ -25,7 +25,6 @@ function findLowestScore(scores: number[]): number {
 }
 
 function calculateAverage(scores: number[]): number {
-
 }
 
 function countPassedStudents(scores: number[]): number {

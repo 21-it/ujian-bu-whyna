@@ -8,7 +8,7 @@
  * 3. Otherwise:
  *  - Patients with health insurance are assigned to the Insurance Registration Counter.
  *  - Patients without insurance are assigned to the General Registration Counter.
- * 
+ *
  * Today's patient information:
  * | Information        | Value      |
  * | ------------------ | ---------- |
@@ -17,8 +17,8 @@
  * | Has Appointment    | Yes        |
  * | Age                | 67         |
  * | Has Insurance      | Yes        |
- * 
- * Tasks: 
+ *
+ * Tasks:
  * 1. Declare all required variables.
  * 2. Implement the hospital workflow using conditional statements.
  * 3. Display the patient's destination.

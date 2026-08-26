@@ -1,11 +1,11 @@
 /**
  * The warehouse checks customer orders before shipping based on array below.
- * 
+ *
  * Business Rules
  * An order is ready to ship only if:
  * - Payment has been completed.
  * - Stock is available.
- * 
+ *
  * Student Task:
  * Loop through every order and calculate:
  * - Number of orders ready to ship

@@ -1,9 +1,9 @@
 /**
- * The school's Smart Greenhouse system automatically records the air temperature every hour from 08:00 until 15:00. 
- * Instead of storing each temperature in a separate variable, the developer wants to store all temperature readings in a 
+ * The school's Smart Greenhouse system automatically records the air temperature every hour from 08:00 until 15:00.
+ * Instead of storing each temperature in a separate variable, the developer wants to store all temperature readings in a
  * single collection so they can easily calculate the highest, lowest, and average temperature later.
  * Today, the recorded temperatures are:
- * 
+ *
 | Time  | Temperature (°C) |
 | ----- | ---------------- |
 | 08:00 | 24.5             |
@@ -16,7 +16,7 @@
 | 15:00 | 29.3             |
 
  * Task:
- * 
+ *
  * 1. Define a proper type for the temperature information.
  * 2. Store the temperature data in a single collection.
  * 3. Display the temperature data using console.log.

@@ -9,10 +9,17 @@
  * | John Cena      |    92 |
  * | Undertaker     |    76 |
  * | Rey Mysterio   |    88 |
+<<<<<<< HEAD
  *
  * Instead of repeating the decision logic, the HR department wants a reusable function.
  * The function should display the notification directly and does not return any value.
  *
+=======
+ *
+ * Instead of repeating the decision logic, the HR department wants a reusable function.
+ * The function should display the notification directly and does not return any value.
+ *
+>>>>>>> assign/main
  * Student Tasks:
  * 1. Create a function named showBonusStatus.
  * 2. The function receives:

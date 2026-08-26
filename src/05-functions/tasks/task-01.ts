@@ -4,14 +4,14 @@
  * - Assignment: 30%
  * - Midterm Exam: 30%
  * - Final Exam: 40%
- * 
+ *
  * Three students have the following scores:
  * | Student | Assignment | Midterm | Final |
  * | ------- | ---------: | ------: | ----: |
  * | Alya    |         85 |      80 |    92 |
  * | Budi    |         78 |      75 |    81 |
  * | Citra   |         90 |      88 |    95 |
- * 
+ *
  * The function should return the calculated final grade.
  * Student Tasks:
  * 1. Create a function named calculateFinalGrade.

@@ -7,11 +7,11 @@
  * | ----------------- | ------------- |
  * | Employee Name     | Dimas Pratama |
  * | Performance Score | 78            |
- * 
+ *
  * Tasks:
  * 1. Declare the variables.
  * 2. Use an if...else statement.
- * 3. Display the evaluation result. If eligible will display "Bonus Approved", 
+ * 3. Display the evaluation result. If eligible will display "Bonus Approved",
  * otherwise display "Bonus not approved"
  */
 

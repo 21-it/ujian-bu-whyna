@@ -1,7 +1,12 @@
 /**
  * A programming competition stores participants' scores in the following array.
+<<<<<<< HEAD
  *
  *
+=======
+ *
+ *
+>>>>>>> assign/main
  * Competition Rules
  * Gold Medal : score ≥ 95
  * Silver Medal : score 85–94

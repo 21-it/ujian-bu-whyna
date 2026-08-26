@@ -6,7 +6,7 @@
  * - The student has participated in at least 3 competitions
  * - The student has no disciplinary violations
  * - The student has completed all administrative documents.
- * 
+ *
  * The admissions office receives the following student information.
  * | Information             | Value      |
  * | ----------------------- | ---------- |
@@ -16,16 +16,16 @@
  * | Competition Count       | 4          |
  * | Has Disciplinary Record | No         |
  * | Documents Complete      | Yes        |
- * 
+ *
  * If the student qualifies:
  *  - Scholarship Amount = Rp12,000,000
- * 
+ *
  * Otherwise:
  *  - Scholarship Amount = Rp0
- * 
- * Finally, the system should also calculate how much funding remains if the 
+ *
+ * Finally, the system should also calculate how much funding remains if the
  * university has a total scholarship budget of Rp500,000,000.
- * 
+ *
  * Task:
  * - Evaluate every requirement using comparison operators.
  * - Combine all conditions using logical operators.

@@ -1,5 +1,5 @@
 /**
- * A programming bootcamp stores information about every participant who registers for the Backend Development class. 
+ * A programming bootcamp stores information about every participant who registers for the Backend Development class.
  * Since many students register for the same course, the system stores the participant data as a collection instead of creating separate variables.
  * Today, three students registered for the course.
 | Student ID | Name           | Age | Has Paid |
