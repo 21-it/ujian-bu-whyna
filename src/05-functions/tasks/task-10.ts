@@ -242,7 +242,6 @@ function printAcademicStatistics(): void {
 function printLearningDashboard(): void {
   console.log("=== Online Learning Dashboard ===");
 
-  // Completion Statistics
   console.log("=== Completion Statistics ===");
 
   console.log("Total enrollments:", countTotalEnrollments());
@@ -253,10 +252,8 @@ function printLearningDashboard(): void {
 
   console.log("Completion percentage:", getCompletionRateText());
 
-  // Academic Statistics
   printAcademicStatistics();
 
-  // Course Statistics
   console.log("=== Course Statistics ===");
 
   console.log("TypeScript students:", countStudentsByCourse("TypeScript"));
@@ -280,16 +277,11 @@ function printLearningDashboard(): void {
     calculateAverageScoreByCourse("Backend"),
   );
 
-  // Learning Statistics
   console.log("=== Learning Statistics ===");
 
   console.log("Total learning hours:", calculateTotalLearningHours());
 
   console.log("Average learning duration:", calculateAverageLearningDuration());
 }
-
-// ======================================================
-// RUN PROGRAM
-// ======================================================
 
 printLearningDashboard();
