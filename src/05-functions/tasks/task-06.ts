@@ -12,22 +12,48 @@
  * Create the following functions:
  */
 
-function calculateTotalSales(sales: number[]): number {
+const sales = [
+  125000,
+  780000,
+  250000,
+  99000,
+  540000,
+  670000,
+  180000,
+  450000,
+  310000,
+  820000
+];
 
+function calculateTotalSales(sales: number[]): number {
+    return sales.reduce((total, sale) => total + sale, 0);
 }
 
 function findHighestTransaction(sales: number[]): number {
-
-}
+    return Math.max(...sales); }
 
 function findLowestTransaction(sales: number[]): number {
-
+    return Math.min(...sales);
 }
 
 function calculateAverageSale(sales: number[]): number {
-
+    const total = calculateTotalSales(sales);
+    return total / sales.length;
 }
 
-function countLargeTransactions(sales: number[], minimumAmount: number): number {
-
+function countLargeTransactions( sales: number[], minimumAmount: number ): number {
+    return sales.filter((sale) => sale > minimumAmount).length;
 }
+
+function displayDashboard(sales: number[]): void {
+    const minimumAmount = 500000;
+    console.log("=== Daily Sales Dashboard ===");
+    console.log("Transactions:", sales);
+    console.log("Total sales:", calculateTotalSales(sales));
+    console.log("Highest transaction:", findHighestTransaction(sales));
+    console.log("Lowest transaction:", findLowestTransaction(sales));
+    console.log( "Average transaction:", calculateAverageSale(sales).toFixed(2) );
+    console.log( `Transactions above Rp${minimumAmount}:`, countLargeTransactions(sales, minimumAmount) );
+}
+
+displayDashboard(sales)

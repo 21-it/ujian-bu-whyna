@@ -16,17 +16,42 @@
  * 4. Create function to return number of passing students.
  */
 
-function findHighestScore(scores: number[]): number {
+const scores = [
+  82,
+  91,
+  76,
+  88,
+  69,
+  94,
+  73,
+  85,
+  79,
+  97
+];
 
-}
+function findHighestScore(scores: number[]): number {
+    return Math.max(...scores); }
 
 function findLowestScore(scores: number[]): number {
-
-}
+    return Math.min(...scores); }
 
 function calculateAverage(scores: number[]): number {
+    const total = scores.reduce((sum, score) => sum + score, 0);
+    return total / scores.length;
 }
 
 function countPassedStudents(scores: number[]): number {
-
+    const passingScore = 75;
+    return scores.filter((score) => score >= passingScore).length;
 }
+
+function displayReport(scores: number[]): void {
+    console.log("=== Backend Development Score Report ===");
+    console.log("Scores:", scores);
+    console.log("Highest score:", findHighestScore(scores));
+    console.log("Lowest score:", findLowestScore(scores));
+    console.log("Average score:", calculateAverage(scores).toFixed(2));
+    console.log("Passing students:", countPassedStudents(scores));
+}
+
+displayReport(scores);
