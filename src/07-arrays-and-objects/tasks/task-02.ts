@@ -9,39 +9,59 @@
  */
 
 const products = [
-    {
-        id: 1,
-        name: "Keyboard",
-        category: "Computer",
-        price: 350000,
-        stock: 10,
-    },
-    {
-        id: 2,
-        name: "Mouse",
-        category: "Computer",
-        price: 150000,
-        stock: 0,
-    },
-    {
-        id: 3,
-        name: "Monitor",
-        category: "Computer",
-        price: 2500000,
-        stock: 5,
-    },
-    {
-        id: 4,
-        name: "Headset",
-        category: "Audio",
-        price: 450000,
-        stock: 8,
-    },
-    {
-        id: 5,
-        name: "Microphone",
-        category: "Audio",
-        price: 850000,
-        stock: 3,
-    },
+  {
+    id: 1,
+    name: "Keyboard",
+    category: "Computer",
+    price: 350000,
+    stock: 10,
+  },
+  {
+    id: 2,
+    name: "Mouse",
+    category: "Computer",
+    price: 150000,
+    stock: 0,
+  },
+  {
+    id: 3,
+    name: "Monitor",
+    category: "Computer",
+    price: 2500000,
+    stock: 5,
+  },
+  {
+    id: 4,
+    name: "Headset",
+    category: "Audio",
+    price: 450000,
+    stock: 8,
+  },
+  {
+    id: 5,
+    name: "Microphone",
+    category: "Audio",
+    price: 850000,
+    stock: 3,
+  },
 ];
+
+console.log("=== Product Analysis ===");
+
+const availableProducts = products.filter((product) => product.stock > 0);
+console.log("Available products:", availableProducts);
+
+const inStockProducts = products.filter((product) => product.stock > 0);
+console.log("In stock products:", inStockProducts);
+
+const productNames = products.map((product) => product.name);
+console.log("Product names:", productNames);
+
+const totalStockValue = products.reduce((total, product) => total + product.price * product.stock, 0);
+console.log("Total stock value:", totalStockValue);
+
+const sortedProducts = products
+  .filter((product) => product.stock > 0)
+  .sort((a, b) => b.price - a.price);
+
+console.log("Sorted available products:", sortedProducts);

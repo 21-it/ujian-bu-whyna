@@ -22,54 +22,37 @@ const products = [
  * Instead of creating a separate loop for every operation, the developer creates a reusable processing function.
  */
 
-function displayProduct(product: typeof products[number]): string {
-    return `${product.name} - Rp${product.price}`;
+function displayProduct(product: { name: string; price: number }): void {
+    console.log(`${product.name} - Rp${product.price}`);
 }
 
-function displayExpensiveProduct(product: typeof products[number]): string | null {
+function displayExpensiveProduct(product: { name: string; price: number;}): void {
     if (product.price > 1000000) {
-        return `${product.name} - Rp${product.price}`;
+        console.log(`${product.name} - Rp${product.price}`);
     }
-    return null;
 }
 
-function displayDiscountProduct(
-    product: typeof products[number]
-): string | null {
+function displayDiscountProduct(product: {name: string; price: number;}): void {
     if (product.price > 500000) {
-        const discountPrice = product.price * 0.9;
-        return `${product.name} - Rp${discountPrice}`;
+    const discountPrice = product.price * 0.9;
+        console.log(`${product.name} - Rp${discountPrice}`);
     }
-    return null;
 }
 
-function processProducts<T>(product: typeof products, callback: (product: typeof products[number]) => T): T[] {
+function processProducts<T>(arr: { name: string; price: number }[], callback: (product: { name: string; price: number }) => T): T[] {
     const results: T[] = [];
-    for (const product of products) {
-        const result = callback(product);
+    for (let index = 0; index < arr.length; index++) {
+        const result = callback(arr[index]);
         results.push(result);
     }
     return results;
 }
 
-console.log("=== ALL PRODUCTS ===");
-const allProducts = processProducts(products, displayProduct);
-for (const product of allProducts) {
-    console.log(product);
-}
+console.log(`\n=== Display Product ===`);
+processProducts(products, displayProduct);
 
-console.log("\n=== EXPENSIVE PRODUCTS ===");
-const expensiveProducts = processProducts(products, displayExpensiveProduct);
-for (const product of expensiveProducts) {
-    if (product !== null) {
-        console.log(product);
-    }
-}
+console.log(`\n=== Display Expensive Product ===`);
+processProducts(products, displayExpensiveProduct);
 
-console.log("\n=== DISCOUNT PRODUCTS ===");
-const discountProducts = processProducts(products, displayDiscountProduct);
-for (const product of discountProducts) {
-    if (product !== null) {
-        console.log(product);
-    }
-}
+console.log(`\n=== Display Count Product ===`)
+processProducts(products, displayDiscountProduct);

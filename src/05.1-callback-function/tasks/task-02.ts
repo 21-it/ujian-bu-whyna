@@ -25,10 +25,7 @@ const scores = [85, 72, 91, 64, 88];
  * function that receives the processing logic as a callback.
  */
 
-function processScores(
-    scores: number[],
-    callback: (score: number) => void
-): void {
+function processScores(scores: number[], callback: (score: number) => void): void {
     for (const score of scores) {
         callback(score);
     }

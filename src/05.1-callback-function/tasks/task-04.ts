@@ -46,7 +46,7 @@ function addBonus(score: number): string {
     if (bonusScore > 90) {
         return `${score} + 5 = ${bonusScore} -> Excellent`;
     } else {
-        return `${score} + 5 = ${bonusScore} -> Reguler`
+        return `${score} + 5 = ${bonusScore} -> Reguler`;
     }
 }
 

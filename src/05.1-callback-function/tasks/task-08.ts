@@ -46,3 +46,60 @@ const transactions = [
  *   - Pending transactions → 1%
  *   - Cancelled transactions → 0%
  */
+
+type Transaction = {
+    id: string
+    customer: string
+    amount: number
+    status: string
+}
+
+type TransactionResult = Transaction & {
+    category: "HIGH VALUE" | "MEDIUM VALUE" | "LOW VALUE"
+    platformFee: number
+}
+
+function getCustomerName(transaction: Transaction): string {
+    return transaction.customer
+}
+
+function processTransaction(transaction: Transaction): TransactionResult {
+    let category: "HIGH VALUE" | "MEDIUM VALUE" | "LOW VALUE"
+    if (transaction.amount >= 2000000) {
+        category = "HIGH VALUE"
+    } else if (transaction.amount >= 1000000) {
+        category = "MEDIUM VALUE"
+    } else {
+        category = "LOW VALUE"
+    }
+
+    let platformFee = 0
+    if (transaction.status === "paid") {
+        platformFee = transaction.amount * 0.02
+    } else if (transaction.status === "pending") {
+        platformFee = transaction.amount * 0.01
+    } else if (transaction.status === "cancelled") {
+        platformFee = 0
+    }
+    return {...transaction, category, platformFee
+    }
+}
+
+function processTransactions<T>(arr: Transaction[], callback: (transaction: Transaction) => T): T[] {
+    const results: T[] = []
+    for (const transaction of arr) {
+        const result = callback(transaction)
+        results.push(result)
+    }
+    return results
+}
+
+const customerNames = processTransactions(transactions, getCustomerName)
+
+console.log(`\n====== CUSTOMER NAMES ======`)
+console.table(customerNames)
+
+const transactionResults = processTransactions(transactions, processTransaction)
+
+console.log(`\n====== TRANSACTION RESULT ======`)
+console.table(transactionResults)
