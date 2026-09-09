@@ -2,10 +2,10 @@
  * An online store has the following products:
  */
 const products = [
-    { name: "Keyboard", price: 850000 },
-    { name: "Mouse", price: 275000 },
-    { name: "Monitor", price: 2200000 },
-    { name: "Headset", price: 650000 }
+  { name: "Keyboard", price: 850000 },
+  { name: "Mouse", price: 275000 },
+  { name: "Monitor", price: 2200000 },
+  { name: "Headset", price: 650000 },
 ];
 
 /**
@@ -23,29 +23,40 @@ const products = [
  */
 
 function displayProduct(product: { name: string; price: number }): void {
+  console.log(`${product.name} - Rp${product.price}`);
+}
+
+function displayExpensiveProduct(product: {
+  name: string;
+  price: number;
+}): void {
+  if (product.price > 1000000) {
     console.log(`${product.name} - Rp${product.price}`);
+  }
 }
 
-function displayExpensiveProduct(product: { name: string; price: number;}): void {
-    if (product.price > 1000000) {
-        console.log(`${product.name} - Rp${product.price}`);
-    }
-}
-
-function displayDiscountProduct(product: {name: string; price: number;}): void {
-    if (product.price > 500000) {
+function displayDiscountProduct(product: {
+  name: string;
+  price: number;
+}): void {
+  if (product.price > 500000) {
     const discountPrice = product.price * 0.9;
-        console.log(`${product.name} - Rp${discountPrice}`);
-    }
+    console.log(`${product.name} - Rp${discountPrice}`);
+  }
 }
 
-function processProducts<T>(arr: { name: string; price: number }[], callback: (product: { name: string; price: number }) => T): T[] {
-    const results: T[] = [];
-    for (let index = 0; index < arr.length; index++) {
-        const result = callback(arr[index]);
-        results.push(result);
-    }
-    return results;
+function processProducts<T>(
+  arr: { name: string; price: number }[],
+  callback: (product: { name: string; price: number }) => T,
+): T[] {
+  const results: T[] = [];
+
+  for (let index = 0; index < arr.length; index++) {
+    const result = callback(arr[index]);
+    results.push(result);
+  }
+
+  return results;
 }
 
 console.log(`\n=== Display Product ===`);
@@ -54,5 +65,5 @@ processProducts(products, displayProduct);
 console.log(`\n=== Display Expensive Product ===`);
 processProducts(products, displayExpensiveProduct);
 
-console.log(`\n=== Display Count Product ===`)
+console.log(`\n=== Display Discount Product ===`);
 processProducts(products, displayDiscountProduct);

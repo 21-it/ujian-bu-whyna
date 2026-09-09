@@ -3,36 +3,36 @@
  */
 
 type Order = {
-    id: string
-    customer: string
-    total: number
-    paid: boolean
-}
+  id: string;
+  customer: string;
+  total: number;
+  paid: boolean;
+};
 const orders: Order[] = [
-    {
-        id: "ORD001",
-        customer: "Alya",
-        total: 850000,
-        paid: true
-    },
-    {
-        id: "ORD002",
-        customer: "Budi",
-        total: 1250000,
-        paid: false
-    },
-    {
-        id: "ORD003",
-        customer: "Citra",
-        total: 450000,
-        paid: true
-    },
-    {
-        id: "ORD004",
-        customer: "Dimas",
-        total: 2100000,
-        paid: true
-    }
+  {
+    id: "ORD001",
+    customer: "Alya",
+    total: 850000,
+    paid: true,
+  },
+  {
+    id: "ORD002",
+    customer: "Budi",
+    total: 1250000,
+    paid: false,
+  },
+  {
+    id: "ORD003",
+    customer: "Citra",
+    total: 450000,
+    paid: true,
+  },
+  {
+    id: "ORD004",
+    customer: "Dimas",
+    total: 2100000,
+    paid: true,
+  },
 ];
 
 /**
@@ -51,37 +51,48 @@ const orders: Order[] = [
  *
  */
 
-type SHIPPING_CATEGORY = "FREE SHIPPING" | "STANDARD SHIPPING" | "ECONOMY SHIPPING"
-type ORDER_STATUS = "PAID" | "UNPAID"
-type PaymentStatusOrder = Order & { status: ORDER_STATUS }
-type ShippingCategoryOrder = Order & { shippingStatus: SHIPPING_CATEGORY }
+type SHIPPING_CATEGORY =
+  | "FREE SHIPPING"
+  | "STANDARD SHIPPING"
+  | "ECONOMY SHIPPING";
+type ORDER_STATUS = "PAID" | "UNPAID";
+
+type PaymentStatusOrder = Order & { status: ORDER_STATUS };
+type ShippingCategoryOrder = Order & { shippingStatus: SHIPPING_CATEGORY };
 
 function getPaymentStatus(selectedOrder: Order): PaymentStatusOrder {
-    return {...selectedOrder, status: selectedOrder.paid ? "PAID" : "UNPAID"
-    }
+  return {
+    ...selectedOrder,
+    status: selectedOrder.paid ? "PAID" : "UNPAID",
+  };
 }
 
 function getShippingCategory(selectedOrder: Order): ShippingCategoryOrder {
-    let shippingStatus: SHIPPING_CATEGORY
-    if (selectedOrder.total >= 1_500_000) {
-        shippingStatus = "FREE SHIPPING"
-    } else if (selectedOrder.total >= 500_000) {
-        shippingStatus = "STANDARD SHIPPING"
-    } else {
-        shippingStatus = "ECONOMY SHIPPING"
-    }
-    return {...selectedOrder, shippingStatus
-    }
+  let shippingStatus: SHIPPING_CATEGORY;
+
+  if (selectedOrder.total >= 1500000) {
+    shippingStatus = "FREE SHIPPING";
+  } else if (selectedOrder.total >= 500000) {
+    shippingStatus = "STANDARD SHIPPING";
+  } else {
+    shippingStatus = "ECONOMY SHIPPING";
+  }
+
+  return {
+    ...selectedOrder,
+    shippingStatus,
+  };
 }
 
 function processOrder<T>(arr: Order[], callback: (order: Order) => T): T[] {
-    return arr.map(callback)
+  return arr.map(callback);
 }
 
-const orderWithPaymentStatus = processOrder(orders, getPaymentStatus)
-const orderWithShippingCategory = processOrder(orders, getShippingCategory)
+const orderWithPaymentStatus = processOrder(orders, getPaymentStatus);
+const orderWithShippingCategory = processOrder(orders, getShippingCategory);
 
 console.log(`====== ORDER WITH PAYMENT STATUS ======`);
-console.log({ orders: orderWithPaymentStatus })
+console.log({ orders: orderWithPaymentStatus });
+
 console.log(`====== ORDER WITH SHIPPING CATEGORY ======`);
-console.log({ orders: orderWithShippingCategory })
+console.log({ orders: orderWithShippingCategory });

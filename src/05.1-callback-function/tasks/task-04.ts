@@ -21,43 +21,47 @@ const scores = [92, 68, 84, 73, 95, 61, 88];
  */
 
 function checkPassing(score: number): string {
-    if (score >= 70) {
-        return `${score} -> PASS`;
-    } else {
-        return `${score} -> FAIL`;
-    }
+  if (score >= 70) {
+    return `${score} -> PASS`;
+  } else {
+    return `${score} -> FAIL`;
+  }
 }
 
 function determineGrade(score: number): string {
-    if (score >= 90) {
-        return "A";
-    } else if (score >= 80) {
-        return "B";
-    } else if (score >= 70) {
-        return "C";
-    } else {
-        return "D";
-    }
+  if (score >= 90) {
+    return "A";
+  } else if (score >= 80) {
+    return "B";
+  } else if (score >= 70) {
+    return "C";
+  } else {
+    return "D";
+  }
 }
 
 function addBonus(score: number): string {
-    const bonusScore = score + 5;
+  const bonusScore = score + 5;
 
-    if (bonusScore > 90) {
-        return `${score} + 5 = ${bonusScore} -> Excellent`;
-    } else {
-        return `${score} + 5 = ${bonusScore} -> Reguler`;
-    }
+  if (bonusScore > 90) {
+    return `${score} + 5 = ${bonusScore} -> Excellent`;
+  } else {
+    return `${score} + 5 = ${bonusScore} -> Reguler`;
+  }
 }
 
-function processScores<T>(scores: number[], callback: (score: number) => T): T[] {
-    const results: T[] = [];
+function processScores<T>(
+  scores: number[],
+  callback: (score: number) => T,
+): T[] {
+  const results: T[] = [];
 
-    for (const score of scores) {
-        const result = callback(score);
-        results.push(result);
-    }
-    return results;
+  for (const score of scores) {
+    const result = callback(score);
+    results.push(result);
+  }
+
+  return results;
 }
 
 const gradeResults = processScores(scores, determineGrade);

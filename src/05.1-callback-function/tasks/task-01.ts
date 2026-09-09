@@ -6,21 +6,21 @@
  */
 
 function registerStudent(
-    studentName: string,
-    callback: (name: string) => void
+  studentName: string,
+  callback: (name: string) => void,
 ): void {
-    console.log(`Registering ${studentName}...`);
+  console.log(`Registering ${studentName}...`);
 
-    callback(studentName);
+  callback(studentName);
 }
 
 /** The school provides the callback: */
 function showRegistrationMessage(name: string): void {
-    console.log(`${name} successfully registered.`);
+  console.log(`${name} successfully registered.`);
 }
 
 /** show registration message */
-registerStudent(`John Cena`, showRegistrationMessage)
+registerStudent(`John Cena`, showRegistrationMessage);
 
 /**
  * TASK:
@@ -29,18 +29,15 @@ registerStudent(`John Cena`, showRegistrationMessage)
  * */
 
 function greetStudent(
-    studentName: string,
-    callback: (name: string) => void
+  studentName: string,
+  callback: (name: string) => void,
 ): void {
-    console.log(`Looking for ${studentName}...`);
-
-    callback(studentName);
+  console.log(`Looking for ${studentName}...`);
+  callback(studentName);
 }
 
-/** The school provides the callback: */
 function showGreetingMessage(name: string): void {
-    console.log(`Good Morning, ${name}.`);
+  console.log(`Good Morning, ${name}.`);
 }
 
-/** show registration message */
-greetStudent(`John Cena`, showGreetingMessage)
+greetStudent(`John Cena`, showGreetingMessage);

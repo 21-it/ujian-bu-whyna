@@ -28,85 +28,139 @@
  */
 
 type Student = {
-    name: string
-    score: number
-    attendance: number
-}
+  name: string;
+  score: number;
+  attendance: number;
+};
 
-type PASS_STATUS = "PASS" | "FAIL"
-type PERFORMANCE_CATEGORY = | "EXCELLENT" | "GOOD" | "NEEDS IMPROVEMENT" | "UNSATISFACTORY"
-type ATTENDANCE_STATUS = | "GOOD ATTENDANCE" | "POOR ATTENDANCE"
-type RECOMMENDATION = | "Excellent" | "Good" | "Improve Attendance" | "Improve Academic Performance"
+type PASS_STATUS = "PASS" | "FAIL";
 
-type StudentPassStatus = Student & {status: PASS_STATUS}
-type StudentPerformance = Student & {category: PERFORMANCE_CATEGORY}
-type StudentAttendance = Student & {attendanceStatus: ATTENDANCE_STATUS}
-type StudentRecommendation = Student & {recommendation: RECOMMENDATION}
+type PERFORMANCE_CATEGORY =
+  | "EXCELLENT"
+  | "GOOD"
+  | "NEEDS IMPROVEMENT"
+  | "UNSATISFACTORY";
+
+type ATTENDANCE_STATUS = "GOOD ATTENDANCE" | "POOR ATTENDANCE";
+
+type RECOMMENDATION =
+  | "Excellent"
+  | "Good"
+  | "Improve Attendance"
+  | "Improve Academic Performance";
+
+type StudentPassStatus = Student & {
+  status: PASS_STATUS;
+};
+
+type StudentPerformance = Student & {
+  category: PERFORMANCE_CATEGORY;
+};
+
+type StudentAttendance = Student & {
+  attendanceStatus: ATTENDANCE_STATUS;
+};
+
+type StudentRecommendation = Student & {
+  recommendation: RECOMMENDATION;
+};
 
 const students: Student[] = [
-    { name: "Alya", score: 92, attendance: 96 },
-    { name: "Budi", score: 68, attendance: 88 },
-    { name: "Citra", score: 84, attendance: 91 },
-    { name: "Dimas", score: 73, attendance: 95 },
-    { name: "Eka", score: 95, attendance: 82 },
-    { name: "Fajar", score: 79, attendance: 97 }
-]
+  { name: "Alya", score: 92, attendance: 96 },
+  { name: "Budi", score: 68, attendance: 88 },
+  { name: "Citra", score: 84, attendance: 91 },
+  { name: "Dimas", score: 73, attendance: 95 },
+  { name: "Eka", score: 95, attendance: 82 },
+  { name: "Fajar", score: 79, attendance: 97 },
+];
 
 function getPassFailStatus(selectedStudent: Student): StudentPassStatus {
-    const isPassed = selectedStudent.score >= 75 && selectedStudent.attendance >= 90
-    return {...selectedStudent, status: isPassed ? "PASS" : "FAIL"
-    }
+  const isPassed =
+    selectedStudent.score >= 75 && selectedStudent.attendance >= 90;
+
+  return {
+    ...selectedStudent,
+    status: isPassed ? "PASS" : "FAIL",
+  };
 }
 
 function getPerformanceCategory(selectedStudent: Student): StudentPerformance {
-    let category: PERFORMANCE_CATEGORY
-    if (selectedStudent.score >= 90) {
-        category = "EXCELLENT"
-    } else if (selectedStudent.score >= 75) {
-        category = "GOOD"
-    } else if (selectedStudent.score >= 60) {
-        category = "NEEDS IMPROVEMENT"
-    } else {
-        category = "UNSATISFACTORY"
-    }
-    return {...selectedStudent, category
-    }
+  let category: PERFORMANCE_CATEGORY;
+
+  if (selectedStudent.score >= 90) {
+    category = "EXCELLENT";
+  } else if (selectedStudent.score >= 75) {
+    category = "GOOD";
+  } else if (selectedStudent.score >= 60) {
+    category = "NEEDS IMPROVEMENT";
+  } else {
+    category = "UNSATISFACTORY";
+  }
+
+  return {
+    ...selectedStudent,
+    category,
+  };
 }
 
 function getAttendanceStatus(selectedStudent: Student): StudentAttendance {
-    return {...selectedStudent, attendanceStatus: selectedStudent.attendance >= 90 ? "GOOD ATTENDANCE": "POOR ATTENDANCE"
-    }
+  return {
+    ...selectedStudent,
+    attendanceStatus:
+      selectedStudent.attendance >= 90 ? "GOOD ATTENDANCE" : "POOR ATTENDANCE",
+  };
 }
 
-function getFinalRecommendation(selectedStudent: Student): StudentRecommendation {
-    let recommendation: RECOMMENDATION
-    if (selectedStudent.score >= 90 && selectedStudent.attendance >= 90) {
-        recommendation = "Excellent"
-    } else if (selectedStudent.score >= 75 && selectedStudent.attendance >= 90) {
-        recommendation = "Good"
-    } else if (selectedStudent.score >= 75 && selectedStudent.attendance < 90) {
-        recommendation = "Improve Attendance"
-    } else {
-        recommendation = "Improve Academic Performance"
-    }
-    return {...selectedStudent, recommendation
-    }
+function getFinalRecommendation(
+  selectedStudent: Student,
+): StudentRecommendation {
+  let recommendation: RECOMMENDATION;
+
+  if (selectedStudent.score >= 90 && selectedStudent.attendance >= 90) {
+    recommendation = "Excellent";
+  } else if (selectedStudent.score >= 75 && selectedStudent.attendance >= 90) {
+    recommendation = "Good";
+  } else if (selectedStudent.score >= 75 && selectedStudent.attendance < 90) {
+    recommendation = "Improve Attendance";
+  } else {
+    recommendation = "Improve Academic Performance";
+  }
+
+  return {
+    ...selectedStudent,
+    recommendation,
+  };
 }
 
-function processStudents<T>(arr: Student[], callback: (student: Student) => T): T[] {
-    return arr.map(callback)
+function processStudents<T>(
+  arr: Student[],
+  callback: (student: Student) => T,
+): T[] {
+  return arr.map(callback);
 }
 
-const studentsWithPassStatus = processStudents(students, getPassFailStatus)
-const studentsWithPerformance = processStudents(students, getPerformanceCategory)
-const studentsWithAttendance = processStudents(students, getAttendanceStatus)
-const studentsWithRecommendation = processStudents(students, getFinalRecommendation)
+const studentsWithPassStatus = processStudents(students, getPassFailStatus);
 
-console.log("\n====== PASS / FAIL STATUS ======")
-console.log({ students: studentsWithPassStatus })
-console.log("\n====== PERFORMANCE CATEGORY ======")
-console.log({ students: studentsWithPerformance })
-console.log("\n====== ATTENDANCE STATUS ======")
-console.log({ students: studentsWithAttendance })
-console.log("\n====== FINAL RECOMMENDATION ======")
-console.log({ students: studentsWithRecommendation })
+const studentsWithPerformance = processStudents(
+  students,
+  getPerformanceCategory,
+);
+
+const studentsWithAttendance = processStudents(students, getAttendanceStatus);
+
+const studentsWithRecommendation = processStudents(
+  students,
+  getFinalRecommendation,
+);
+
+console.log("\n====== PASS / FAIL STATUS ======");
+console.log({ students: studentsWithPassStatus });
+
+console.log("\n====== PERFORMANCE CATEGORY ======");
+console.log({ students: studentsWithPerformance });
+
+console.log("\n====== ATTENDANCE STATUS ======");
+console.log({ students: studentsWithAttendance });
+
+console.log("\n====== FINAL RECOMMENDATION ======");
+console.log({ students: studentsWithRecommendation });
