@@ -31,24 +31,25 @@ console.log("=== Exam Analytics ===");
 
 const studentResults = students.map((student) => {
   const correctCount = student.answers.reduce((count, answer, index) => {
-      if (answer === correctAnswers[index]) {
-        return count + 1;
-      }
-      return count;
-    },
-    0
-);
+    if (answer === correctAnswers[index]) {
+      return count + 1;
+    }
+    return count;
+  }, 0);
   const score = correctCount * 20;
-  return {...student, score,
-  };
+  return { ...student, score };
 });
 console.log("\nStudent scores:", studentResults);
 
 const passedStudents = studentResults.filter((student) => student.score > 70);
 console.log("\nPassed students:", passedStudents);
 
-const highestScoreStudent = studentResults.reduce((highest, student) => student.score > highest.score ? student : highest);
+const highestScoreStudent = studentResults.reduce((highest, student) =>
+  student.score > highest.score ? student : highest,
+);
 console.log("\nHighest score student:", highestScoreStudent);
 
-const averageScore =studentResults.reduce((total, student) => total + student.score, 0) / studentResults.length;
+const averageScore =
+  studentResults.reduce((total, student) => total + student.score, 0) /
+  studentResults.length;
 console.log("\nClass average score:", averageScore);

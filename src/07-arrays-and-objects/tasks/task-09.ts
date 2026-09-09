@@ -33,3 +33,27 @@ const posts = [
     likes: 300,
   },
 ];
+
+const typescriptPosts = posts.filter((post) =>
+  post.hashtags.includes("typescript"),
+);
+
+console.log("=== 1. Posts Containing 'typescript' ===");
+console.log(typescriptPosts);
+
+const nestjsPosts = posts.filter((post) => post.hashtags.includes("nestjs"));
+
+console.log("\n=== 2. Posts Containing 'nestjs' ===");
+console.log(nestjsPosts);
+
+const highestLikedPost = posts.reduce((highest, post) => {
+  return post.likes > highest.likes ? post : highest;
+});
+
+console.log("\n=== 3. Post With Highest Likes ===");
+console.log(highestLikedPost);
+
+const totalLikes = posts.reduce((total, post) => total + post.likes, 0);
+
+console.log("\n=== 4. Total Likes ===");
+console.log(totalLikes);

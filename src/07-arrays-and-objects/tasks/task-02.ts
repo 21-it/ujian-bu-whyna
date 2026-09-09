@@ -57,7 +57,10 @@ console.log("In stock products:", inStockProducts);
 const productNames = products.map((product) => product.name);
 console.log("Product names:", productNames);
 
-const totalStockValue = products.reduce((total, product) => total + product.price * product.stock, 0);
+const totalStockValue = products.reduce(
+  (total, product) => total + product.price * product.stock,
+  0,
+);
 console.log("Total stock value:", totalStockValue);
 
 const sortedProducts = products

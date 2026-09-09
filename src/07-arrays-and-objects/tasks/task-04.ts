@@ -31,7 +31,10 @@ const cart = [
 
 console.log("=== Shopping Cart ===");
 
-const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+const subtotal = cart.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0,
+);
 console.log("\nSubtotal:", subtotal);
 
 let discount = 0;

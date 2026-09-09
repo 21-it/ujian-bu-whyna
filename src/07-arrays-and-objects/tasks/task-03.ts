@@ -54,9 +54,10 @@ const lateStudents = attendance
 console.log("\nLate students:", lateStudents);
 
 const studentAttendance = students.map((student) => {
-  const attendanceData = attendance.find((item) => item.studentId === student.id);
-  return {name: student.name, status: attendanceData?.status,
-  };
+  const attendanceData = attendance.find(
+    (item) => item.studentId === student.id,
+  );
+  return { name: student.name, status: attendanceData?.status };
 });
 
 console.log("Student attendance:", studentAttendance);
