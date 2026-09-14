@@ -6,19 +6,19 @@
  * To: student@example.com
  * Message: Your assignment has been graded.
  * --------------------------------------------------
- * 
+ *
  * - SMS, example:
  * --------------------------------------------------
  * To: +628123456789
  * Message: Your assignment has been graded.
  * --------------------------------------------------
- * 
+ *
  * - Push Notification, example:
  * --------------------------------------------------
  * Device: ST001
  * Message: Your assignment has been graded.
  * --------------------------------------------------
- * 
+ *
  * Tasks:
  * - Create class Notification with property "message" and method "send()"
  * - Create children class of Notification such as EmailNotification, SMSNotification, PushNotification
@@ -26,15 +26,80 @@
  */
 
 class Notification {
+  protected message: string;
 
+  constructor(message: string) {
+    this.message = message;
+  }
+
+  send(): void {
+    console.log(`Message: ${this.message}`);
+  }
 }
 
+class EmailNotification extends Notification {
+  private email: string;
+
+  constructor(email: string, message: string) {
+    super(message);
+    this.email = email;
+  }
+
+  override send(): void {
+    console.log(`To: ${this.email}`);
+    console.log(`Message: ${this.message}`);
+  }
+}
+
+class SMSNotification extends Notification {
+  private phoneNumber: string;
+
+  constructor(phoneNumber: string, message: string) {
+    super(message);
+    this.phoneNumber = phoneNumber;
+  }
+
+  override send(): void {
+    console.log(`To: ${this.phoneNumber}`);
+    console.log(`Message: ${this.message}`);
+  }
+}
+
+class PushNotification extends Notification {
+  private deviceId: string;
+
+  constructor(deviceId: string, message: string) {
+    super(message);
+    this.deviceId = deviceId;
+  }
+
+  override send(): void {
+    console.log(`Device: ${this.deviceId}`);
+    console.log(`Message: ${this.message}`);
+  }
+}
+
+const emailNotification = new EmailNotification(
+  "student@example.com",
+  "Your assignment has been graded.",
+);
+
+const smsNotification = new SMSNotification(
+  "+628123456789",
+  "Your assignment has been graded.",
+);
+
+const pushNotification = new PushNotification(
+  "ST001",
+  "Your assignment has been graded.",
+);
+
 const notifications: Notification[] = [
-    emailNotification,
-    smsNotification,
-    pushNotification
+  emailNotification,
+  smsNotification,
+  pushNotification,
 ];
 
 for (const notification of notifications) {
-    notification.send();
+  notification.send();
 }
