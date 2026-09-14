@@ -12,20 +12,20 @@
  * - Price: Rp15,000,000
  * - Stock: 20
  * The company wants to make sure product data cannot be changed carelessly.
- * 
+ *
  * The system needs to support:
  * - Increasing stock
  * - Decreasing stock
  * - Changing price
  * - Checking stock availability
  * - Calculating inventory value
- * 
+ *
  * Student Tasks
  * - Create class Product
  * - Private Properties, at minimum:
  *   * private price: number;
  *   * private stock: number;
- * 
+ *
  * - Other properties can be public or private depending on the student's design.
  * - Required Methods
  *   * addStock(quantity)
@@ -34,7 +34,7 @@
  *   * isAvailable()
  *   * getInventoryValue()
  *   * showProductInfo()
- * 
+ *
  * - Business Rules
  * addStock(): quantity must be greater than 0.
  * removeStock(): quantity must be greater than 0 and not greater than current stock
@@ -43,19 +43,69 @@
  * getInventoryValue(): calculate price × stock
  */
 
-const laptop = new Product(
-    "PRD001",
-    "Gaming Laptop",
-    15000000,
-    20
-);
+class Shopee {
+  public productId: string;
+  public productName: string;
+  private price: number;
+  private stock: number;
+
+  constructor(
+    productId: string,
+    productName: string,
+    price: number,
+    stock: number,
+  ) {
+    this.productId = productId;
+    this.productName = productName;
+    this.price = price;
+    this.stock = stock;
+  }
+
+  public addStock(quantity: number): void {
+    if (quantity > 0) {
+      this.stock += quantity
+    } else {
+      console.log(`Quantity jangan 0 lho yaa....`)
+    }
+  }
+
+  public removeStock(quantity: number): void {
+    if (quantity > 0 && quantity <= this.stock) {
+      this.stock -= quantity
+    } else {
+      console.log(`HEMZZ, jangan ngelunjak yaa wkwkwkwk....`)
+    }
+  }
+
+  public changePrice(newPrice: number): void {
+    if (newPrice > 0) {
+      this.price = newPrice
+    } else {
+      console.log(`Error AWOKWOKWOKWOKWOK....`)
+    }
+  }
+
+  public isAvailable(): boolean {
+    return this.stock > 0
+  }
+
+  public getInventoryValue(): number {
+    return this.price * this.stock
+  }
+
+  public showProductInfo(): void {
+    console.log(`Product ID: ${this.productId}`)
+    console.log(`Product Name: ${this.productName}`)
+    console.log(`Price: ${this.price}`)
+    console.log(`Stock: ${this.stock}`)
+  }
+}
+
+const laptop = new Shopee("PRD001", "Gaming Laptop", 15000000, 20);
 
 laptop.addStock(5);
-
 laptop.removeStock(3);
-
 laptop.changePrice(14500000);
-
-console.log(laptop.isAvailable());
-
-console.log(laptop.getInventoryValue());
+console.log(`Available: ${laptop.isAvailable()}`);
+console.log(`Inventory Value: Rp${laptop.getInventoryValue()}`);
+laptop.showProductInfo();

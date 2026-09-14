@@ -3,12 +3,12 @@
  * Every payment has:
  * - Transaction ID
  * - Amount
- * 
+ *
  * But each payment method processes the transaction differently.
  * -  Credit card's processing fee is 2% of payment amount
  * -  Bank Transfer's processing fee is 5000
  * -  E Wallet's processing 1% of payment amount
- * 
+ *
  * Example transactions:
  * ---------------------
  * Credit Card

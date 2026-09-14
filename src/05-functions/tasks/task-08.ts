@@ -1,5 +1,3 @@
-import { count } from "node:console";
-
 /**
  * An LMS stores assignment submission data at following array.
  * Business Rules

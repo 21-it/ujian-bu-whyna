@@ -16,8 +16,6 @@
  * - Average score
  */
 
-import { scheduler } from "node:timers/promises";
-
 const students = [
   { name: "Alya", score: 88 },
   { name: "Budi", score: 71 },
