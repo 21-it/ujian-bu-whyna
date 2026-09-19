@@ -1,9 +1,10 @@
 /**
- * Rules: Wajib menggunakan teknik Guard Clauses (return lebih awal untuk kondisi error, tanpa menggunakan blok `else`).
- * Data Information: Validasi pendaftaran akun baru dengan parameter `username` (string) dan `password` (string).
- * Requirement: Buat function `registerAccount`.
- * - Guard 1: Jika panjang `username` kurang dari 5 karakter, langsung return "Gagal: Username minimal 5 karakter".
- * - Guard 2: Jika panjang `password` kurang dari 8 karakter, langsung return "Gagal: Password minimal 8 karakter".
- * - Jika semua guard berhasil dilewati (berada di baris paling bawah fungsi), return "Registrasi berhasil!".
- * Expected Output: registerAccount("budi", "12345678") menghasilkan "Gagal: Username minimal 5 karakter". registerAccount("budiono", "rahasia123") menghasilkan "Registrasi berhasil!".
+ * Rules: Gunakan tipe data Array, operator penugasan (Assignment Operator -=), dan kondisi if...else (sebagai pengganti Guard Clauses di level prosedural).
+ * Data Information: Deklarasikan variabel array `shoppingCart` berisi nama-nama barang: `["Buku", "Sepatu"]`. Deklarasikan `balance = 1000` dan `totalPrice = 1200`.
+ * Requirement:
+ * Buat simulasi checkout:
+ * 1. Cek pertama (if): Jika `shoppingCart.length === 0`, console.log("Keranjang belanja kosong").
+ * 2. Cek kedua (else if): Jika `totalPrice` > `balance`, console.log("Saldo tidak mencukupi").
+ * 3. Cek ketiga (else): Jika lolos semua di atas, kurangi `balance` dengan `totalPrice` (gunakan operator -=) lalu console.log("Checkout berhasil, sisa saldo: " + balance).
+ * Expected Output: "Saldo tidak mencukupi"
  */

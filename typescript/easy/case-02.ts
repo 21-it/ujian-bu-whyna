@@ -1,6 +1,8 @@
 /**
- * Rules: Gunakan statement `if...else` dasar.
- * Data Information: Angka yang merepresentasikan nilai ujian siswa.
- * Requirement: Buatlah function `checkPassingGrade` yang menerima parameter `score`. Jika nilai lebih besar atau sama dengan 75, kembalikan string "Selamat, Anda Lulus!". Jika kurang dari 75, kembalikan "Maaf, Anda tidak lulus.".
- * Expected Output: checkPassingGrade(80) menghasilkan "Selamat, Anda Lulus!". checkPassingGrade(60) menghasilkan "Maaf, Anda tidak lulus.".
+ * Rules: Gunakan Logical Operator (&&), Comparison Operator (>=, ===), dan if...else. Jangan gunakan function.
+ * Data Information: Deklarasikan variabel `age` bernilai 17 dan `hasPassedExam` bernilai true. Deklarasikan variabel `result` bertipe string kosong.
+ * Requirement:
+ * Buat kondisi if...else. Jika `age` minimal 17 tahun DAN `hasPassedExam` bernilai true, ubah nilai `result` menjadi "Lulus SIM". Jika salah satu kondisi tidak terpenuhi, ubah `result` menjadi "Gagal SIM".
+ * Cetak `result` menggunakan console.log().
+ * Expected Output: "Lulus SIM"
  */

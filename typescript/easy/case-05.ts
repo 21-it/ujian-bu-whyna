@@ -1,12 +1,9 @@
 /**
- * Rules: Wajib menggunakan `Nested If` (If di dalam If).
- * Data Information: Sistem persetujuan pinjaman bank. Memiliki dua parameter: `age` (number) dan `salary` (number).
- * Requirement: Buat function `approveLoan`.
- * 1. Pengecekan pertama: Apakah `age` >= 21?
- *    - Jika TIDAK, masuk ke blok `else` dan return "Pinjaman ditolak: Usia belum mencukupi".
- *    - Jika YA, masuk ke pengecekan kedua di dalam blok tersebut (Nested If).
- * 2. Pengecekan kedua (di dalam usia >= 21): Apakah `salary` >= 5000000?
- *    - Jika YA, return "Pinjaman disetujui".
- *    - Jika TIDAK, return "Pinjaman ditolak: Pendapatan kurang".
- * Expected Output: approveLoan(25, 6000000) menghasilkan "Pinjaman disetujui". approveLoan(20, 6000000) menghasilkan "Pinjaman ditolak: Usia belum mencukupi".
+ * Rules: Wajib menggunakan Nested If (If di dalam If di dalam If) untuk mengecek validasi secara berurutan.
+ * Data Information: Deklarasikan 3 variabel boolean dan number: `isTicketAvailable = true`, `age = 20`, dan `isVip = false`.
+ * Requirement:
+ * 1. Cek terluar: Jika `isTicketAvailable` true, lanjut ke cek dalam. Jika false, console.log("Tiket habis").
+ * 2. Cek dalam pertama: Jika `age` >= 18, lanjut ke cek berikutnya. Jika kurang, console.log("Belum cukup umur").
+ * 3. Cek dalam kedua (terdalam): Jika `isVip` true, console.log("Akses VIP diberikan"). Jika false, console.log("Akses reguler diberikan").
+ * Expected Output: "Akses reguler diberikan"
  */

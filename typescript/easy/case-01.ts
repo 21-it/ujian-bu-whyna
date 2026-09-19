@@ -1,6 +1,8 @@
 /**
- * Rules: Hanya gunakan statement `if` tunggal (tanpa `else`).
- * Data Information: Angka yang merepresentasikan persentase baterai HP (0 - 100).
- * Requirement: Buatlah function `checkBatteryStatus` yang menerima parameter `batteryLevel`. Jika baterai di bawah atau sama dengan 20, return string "Baterai Lemah! Segera isi daya.". Jika di atas 20, function tidak mengembalikan apa-apa (return undefined / biarkan kosong).
- * Expected Output: checkBatteryStatus(15) menghasilkan "Baterai Lemah! Segera isi daya.". checkBatteryStatus(50) tidak mengembalikan apa-apa.
+ * Rules: Gunakan Primitive Types (number), Arithmetic Operators (+, *, /), dan if...else statment. Jangan gunakan function.
+ * Data Information: Deklarasikan variabel `celsius` bernilai 30. Deklarasikan variabel `fahrenheit` tanpa nilai awal.
+ * Requirement:
+ * 1. Hitung nilai `fahrenheit` dengan rumus: (celsius * 9/5) + 32.
+ * 2. Buat kondisi if...else: Jika `fahrenheit` lebih dari atau sama dengan 85, lakukan console.log("Cuaca Panas"). Jika di bawah 85, console.log("Cuaca Dingin").
+ * Expected Output: Karena 30 Celcius = 86 Fahrenheit, output di console adalah "Cuaca Panas".
  */

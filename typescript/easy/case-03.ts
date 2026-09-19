@@ -1,10 +1,10 @@
 /**
- * Rules: Gunakan statement `if...else if...else`.
- * Data Information: String warna lampu lalu lintas ("merah", "kuning", "hijau").
- * Requirement: Buatlah function `trafficLightAction` yang menerima parameter `color`.
- * - Jika warna "merah", return "Berhenti"
- * - Jika warna "kuning", return "Hati-hati"
- * - Jika warna "hijau", return "Jalan"
- * - Jika warna tidak dikenali (else), return "Warna tidak valid"
- * Expected Output: trafficLightAction("kuning") menghasilkan "Hati-hati". trafficLightAction("biru") menghasilkan "Warna tidak valid".
+ * Rules: Wajib menggunakan Union Types dan Ternary Operator (dilarang menggunakan if...else). Jangan gunakan function.
+ * Data Information: Deklarasikan variabel `deliveryStatus` dengan tipe `string | number` dan beri nilai angka 123456.
+ * Requirement:
+ * Deklarasikan variabel `message`. Gunakan ternary operator untuk mengecek:
+ * Jika tipe data (typeof) `deliveryStatus` adalah "number", isi `message` dengan "Paket sedang dikirim dengan resi: 123456" (gabungkan nilainya).
+ * Jika bukan number (alias string), isi `message` dengan "Status paket: " ditambah nilai string tersebut.
+ * Cetak `message` menggunakan console.log().
+ * Expected Output: "Paket sedang dikirim dengan resi: 123456"
  */

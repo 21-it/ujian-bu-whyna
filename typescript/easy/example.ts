@@ -1,45 +1,56 @@
 /**
- * DOKUMENTASI EXAMPLE - EASY LEVEL (CONDITIONS)
- * ==============================================
+ * DOKUMENTASI EXAMPLE - EASY LEVEL (NO FUNCTION, NO LOOP)
+ * ======================================================
  *
- * Topik: Control Flow / Conditions
+ * Topik: Data Types, Operators & Conditions
  *
  * Deskripsi:
- * Contoh ini mendemonstrasikan berbagai jenis percabangan (conditions) dalam
- * satu fungsi. Terdapat penggunaan Guard Clause, if...else if...else, dan Nested If
- * untuk menentukan apakah seseorang boleh menaiki wahana Roller Coaster.
- *
- * Parameter:
- * - height (number): Tinggi badan pengunjung dalam cm.
- * - hasTicket (boolean): Apakah pengunjung memiliki tiket.
- * - isVIP (boolean): Apakah pengunjung memiliki jalur VIP.
- *
- * Return:
- * - (string): Status izin menaiki wahana.
+ * Contoh ini mendemonstrasikan evaluasi profil user untuk menentukan
+ * status diskon menggunakan eksekusi prosedural (tanpa function).
+ * Kita menggunakan Object, Union Types, Nested If, Logical Operator,
+ * dan Ternary Operator.
  */
 
-function checkRollerCoasterAccess(height: number, hasTicket: boolean, isVIP: boolean): string {
-  // 1. Guard Clause: Pengecekan kondisi mutlak di awal.
-  // Jika tidak punya tiket, langsung tolak tanpa perlu cek yang lain.
-  if (!hasTicket) {
-    return "Akses ditolak: Anda harus membeli tiket terlebih dahulu.";
+// 1. Data Types (Object & Union Type)
+type UserStatus = "active" | "inactive" | "banned";
+
+let userProfile = {
+  name: "Budi",
+  age: 25,
+  isPremium: true,
+  status: "active" as UserStatus
+};
+
+// 2. Deklarasi variabel penampung (Assignment Operator)
+let discount = 0;
+let finalMessage = "";
+
+// 3. Conditions: if...else if...else
+if (userProfile.status !== "active") {
+  finalMessage = "Maaf, akun Anda tidak aktif atau dibanned.";
+} else {
+  // 4. Logical Operator (&&, ||) & Comparison Operator (>=, ===, <)
+  if (userProfile.age >= 60 || userProfile.age <= 12) {
+    discount = 50; // Lansia / anak-anak 50%
+  } else if (userProfile.age > 12 && userProfile.age < 60) {
+
+    // 5. Nested If (If di dalam If)
+    if (userProfile.isPremium === true) {
+      discount = 20; // Premium user dewasa 20%
+    } else {
+      discount = 5;  // User biasa dewasa 5%
+    }
+
+  } else {
+    discount = 0;
   }
 
-  // 2. if...else if...else: Menentukan kategori berdasarkan tinggi badan
-  if (height < 120) {
-    return "Akses ditolak: Tinggi badan Anda di bawah batas minimum (120 cm).";
-  } else if (height > 200) {
-    return "Akses ditolak: Tinggi badan Anda melebihi batas maksimum (200 cm).";
-  } else {
-    // 3. Nested if: If di dalam blok else (Tinggi badan sudah memenuhi syarat)
-    if (isVIP) {
-      return "Akses diizinkan: Silakan masuk melalui jalur Cepat (VIP).";
-    } else {
-      return "Akses diizinkan: Silakan masuk melalui jalur Reguler.";
-    }
-  }
+  // 6. Ternary Operator (Kondisi singkat)
+  finalMessage = discount > 0
+    ? `Selamat ${userProfile.name}! Anda mendapat diskon ${discount}%.`
+    : `Maaf ${userProfile.name}, Anda belum mendapatkan diskon.`;
 }
 
-// Test case example:
-console.log(checkRollerCoasterAccess(150, true, true));
-// Output: "Akses diizinkan: Silakan masuk melalui jalur Cepat (VIP)."
+// Eksekusi akhir
+console.log(finalMessage);
+// Output: "Selamat Budi! Anda mendapat diskon 20%."

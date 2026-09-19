@@ -1,10 +1,11 @@
 /**
- * Rules: Gunakan multiple `else if` untuk mengkategorikan data berjenjang.
- * Data Information: Jarak pengiriman barang dalam kilometer (number).
- * Requirement: Buat function `calculateShippingCost` yang menerima `distance`.
- * - Jika jarak <= 5 km, kembalikan "Ongkir: Rp 10.000"
- * - Jika jarak > 5 km dan <= 15 km, kembalikan "Ongkir: Rp 20.000"
- * - Jika jarak > 15 km dan <= 50 km, kembalikan "Ongkir: Rp 50.000"
- * - Jika jarak > 50 km (else), kembalikan "Pengiriman ke luar kota: Rp 100.000"
- * Expected Output: calculateShippingCost(10) menghasilkan "Ongkir: Rp 20.000".
+ * Rules: Gunakan tipe data Object dan struktur kondisi `if...else if...else`. Jangan gunakan function.
+ * Data Information: Deklarasikan variabel object `student` yang berisi `name: "Andi"` dan `score: 85`. Deklarasikan variabel `grade` bertipe string kosong.
+ * Requirement:
+ * - Jika score >= 90, set `grade` menjadi "A"
+ * - Jika score >= 80, set `grade` menjadi "B"
+ * - Jika score >= 70, set `grade` menjadi "C"
+ * - Jika di bawah 70, set `grade` menjadi "D"
+ * Cetak teks: "Siswa Andi mendapatkan nilai B" menggunakan console.log().
+ * Expected Output: "Siswa Andi mendapatkan nilai B"
  */
