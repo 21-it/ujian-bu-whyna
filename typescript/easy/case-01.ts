@@ -1,6 +1,6 @@
 /**
- * Rules: Gunakan Primitive Types (number) dan Arithmetic Operators (+, -, *, /).
- * Data Information: Suhu dalam derajat Celcius. Contoh: 30.
- * Requirement: Buatlah function `convertToFahrenheit` yang menerima parameter angka (Celcius) dan mengubahnya menjadi Fahrenheit. Rumus: (Celcius * 9/5) + 32.
- * Expected Output: convertToFahrenheit(30) menghasilkan 86
+ * Rules: Hanya gunakan statement `if` tunggal (tanpa `else`).
+ * Data Information: Angka yang merepresentasikan persentase baterai HP (0 - 100).
+ * Requirement: Buatlah function `checkBatteryStatus` yang menerima parameter `batteryLevel`. Jika baterai di bawah atau sama dengan 20, return string "Baterai Lemah! Segera isi daya.". Jika di atas 20, function tidak mengembalikan apa-apa (return undefined / biarkan kosong).
+ * Expected Output: checkBatteryStatus(15) menghasilkan "Baterai Lemah! Segera isi daya.". checkBatteryStatus(50) tidak mengembalikan apa-apa.
  */

@@ -1,6 +1,6 @@
 /**
- * Rules: Gunakan Logical Operator (&&, ||), Comparison Operator (>=, ===), dan if...else statment.
- * Data Information: Data pendaftar SIM berisi umur (number) dan status lulus ujian tertulis (boolean).
- * Requirement: Buatlah function `checkLicenseEligibility` yang menerima 2 parameter (age, hasPassedExam). Jika umur minimal 17 tahun DAN lulus ujian, return "Lulus". Jika tidak, return "Gagal".
- * Expected Output: checkLicenseEligibility(17, true) menghasilkan "Lulus". checkLicenseEligibility(16, true) menghasilkan "Gagal".
+ * Rules: Gunakan statement `if...else` dasar.
+ * Data Information: Angka yang merepresentasikan nilai ujian siswa.
+ * Requirement: Buatlah function `checkPassingGrade` yang menerima parameter `score`. Jika nilai lebih besar atau sama dengan 75, kembalikan string "Selamat, Anda Lulus!". Jika kurang dari 75, kembalikan "Maaf, Anda tidak lulus.".
+ * Expected Output: checkPassingGrade(80) menghasilkan "Selamat, Anda Lulus!". checkPassingGrade(60) menghasilkan "Maaf, Anda tidak lulus.".
  */

@@ -1,9 +1,9 @@
 /**
- * Rules: Wajib menggunakan teknik Guard Clauses (menggunakan `return` lebih awal untuk kondisi error/negatif, sehingga tidak ada blok `else` atau nested if yang dalam).
- * Data Information: Sistem penarikan uang dari ATM. Memiliki parameter `balance` (saldo saat ini) dan `withdrawAmount` (jumlah yang ditarik).
- * Requirement: Buat function `processWithdrawal`.
- * - Guard 1: Jika `withdrawAmount` <= 0, langsung return "Jumlah tidak valid".
- * - Guard 2: Jika `withdrawAmount` > `balance`, langsung return "Saldo tidak mencukupi".
- * - Jika lolos semua guard, kurangi saldo dan return "Penarikan berhasil, sisa saldo: [saldo_baru]". Gunakan Assignment Operator (-=).
- * Expected Output: processWithdrawal(1000, 200) menghasilkan "Penarikan berhasil, sisa saldo: 800".
+ * Rules: Wajib menggunakan teknik Guard Clauses (return lebih awal untuk kondisi error, tanpa menggunakan blok `else`).
+ * Data Information: Validasi pendaftaran akun baru dengan parameter `username` (string) dan `password` (string).
+ * Requirement: Buat function `registerAccount`.
+ * - Guard 1: Jika panjang `username` kurang dari 5 karakter, langsung return "Gagal: Username minimal 5 karakter".
+ * - Guard 2: Jika panjang `password` kurang dari 8 karakter, langsung return "Gagal: Password minimal 8 karakter".
+ * - Jika semua guard berhasil dilewati (berada di baris paling bawah fungsi), return "Registrasi berhasil!".
+ * Expected Output: registerAccount("budi", "12345678") menghasilkan "Gagal: Username minimal 5 karakter". registerAccount("budiono", "rahasia123") menghasilkan "Registrasi berhasil!".
  */
